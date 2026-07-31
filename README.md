@@ -1,16 +1,38 @@
-# React + Vite
+# Quiz Platform — Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface React (Vite) pour générer et passer des quiz à partir de documents PDF.
 
-Currently, two official plugins are available:
+**API requise :** [deeplearning_nlp](https://github.com/Kuroi-Kage/deeplearning_nlp) (Flask) — cette interface a besoin de l'API backend pour fonctionner.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19 + Vite
+- React Router (navigation Générer un quiz / Historique)
+- lucide-react (icônes)
+- Mode clair / sombre
+- Historique des quiz stocké en local (localStorage)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Configuration
+
+Copie `.env.example` en `.env` et ajuste si besoin :
+
+## Lancer en développement
+
+```bash
+npm run dev
+```
+
+Ouvre `http://localhost:5173`. **Le backend Flask doit tourner en parallèle** sur le port 5000 (voir [deeplearning_nlp](https://github.com/Kuroi-Kage/deeplearning_nlp)).
+
+## Build de production
+
+```bash
+npm run build
+npm run preview
+```

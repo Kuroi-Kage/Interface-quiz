@@ -25,23 +25,17 @@ export default function Layout() {
         <NavLink to="/historique" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
           Historique
         </NavLink>
+        <a
+  href="https://github.com/Kuroi-Kage/Interface-quiz#readme"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="nav-link nav-link-external"
+>
+  Documentation
+</a>
       </nav>
 
       <Outlet />
-
-      <footer>
-        <div className="badges">
-          <span className="badge">React 18 (Vite)</span>
-          <span className="badge">Flask API</span>
-          <span className="badge">spaCy / regex fallback</span>
-          <span className="badge">pdfplumber</span>
-        </div>
-        <p>
-          Frontend React connecté en direct à l'API Flask du pipeline (backend/app.py).
-          Aucune étape n'est simulée : chaque quiz généré ici est le résultat réel du
-          traitement du PDF déposé.
-        </p>
-      </footer>
     </div>
   );
 }

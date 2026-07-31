@@ -26,15 +26,13 @@ export default function UploadZone({ file, setFile }) {
       onDrop={onDrop}
     >
       <div className="icon">
-        <UploadCloud size={26} strokeWidth={1.5} />
+        <UploadCloud size={22} strokeWidth={1.5} />
       </div>
-      <div className="main-label">
-        {file ? file.name : "Dépose ton PDF ici"}
-      </div>
+      <div className="main-label">{file ? file.name : "Upload PDF Document"}</div>
       <div className="sub-label">
-        {file ? "Prêt à générer le quiz" : "Glisse-dépose ou clique pour parcourir"}
+        {file ? "Ready to generate quiz" : "Drag and drop your PDF here or click to browse"}
       </div>
-      {file && <div className="filename">{(file.size / 1024).toFixed(2)} KB</div>}
+      <div className="hint-label">Supports PDF in English and French</div>
       <input
         id="fileInput"
         type="file"

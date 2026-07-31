@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
-import ThemeToggle from "./components/ThemeToggle";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(() => localStorageSafe());
-
-  function localStorageSafe() {
+  const [theme, setTheme] = useState(() => {
     try {
       return window.localStorage.getItem("theme") || "light";
     } catch {
       return "light";
     }
-  }
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

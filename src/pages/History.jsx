@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Trash2, FileText } from "lucide-react";
 import { getHistory, clearHistory } from "../lib/history";
 
 export default function History() {
-  const [entries, setEntries] = useState([]);
-
-  useEffect(() => {
-    setEntries(getHistory());
-  }, []);
+  const [entries, setEntries] = useState(() => getHistory());
 
   const handleClear = () => {
     clearHistory();
