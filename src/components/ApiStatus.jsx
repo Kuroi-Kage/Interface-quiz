@@ -14,9 +14,9 @@ export default function ApiStatus() {
   if (online === null) return null;
 
   return (
-    <span className="stack-note">
+     <span className="stack-note">
       <span className={`dot ${online ? "" : "off"}`}></span>
-      API Flask {online ? "connectée (localhost:5000)" : "injoignable — lance `python app.py` dans backend/"}
+      API Flask {online ? `connectée (${API_BASE})` : `injoignable (${API_BASE})`}
     </span>
   );
 }
